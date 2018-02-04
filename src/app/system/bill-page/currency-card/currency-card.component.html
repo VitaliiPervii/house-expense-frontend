@@ -1,0 +1,31 @@
+<div class="col col-xs-12 col-sm-12 col-md-6 col-xl-7 history-col">
+  <div class="card">
+    <div class="card-block">
+      <div class="title-block">
+        <h4 class="title">Курс</h4>
+      </div>
+      <div class="row row-sm stats-container">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>Валюта</th>
+            <th>Покупка</th>
+            <th>Продажа</th>
+            <th>Дата</th>
+          </tr>
+          </thead>
+          <tbody>
+          <ng-container *ngFor="let item of currency">
+            <tr *ngIf="item.ccy !== 'BTC'">
+              <td>{{ item.ccy }}</td>
+              <td>{{ item.buy | number:'1.2-2' }}</td>
+              <td>{{ item.sale | number:'1.2-2' }}</td>
+              <td>{{ date | date:'dd.MM.yyyy' }}</td>
+            </tr>
+          </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
